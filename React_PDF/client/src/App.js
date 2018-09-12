@@ -11,6 +11,7 @@ class App extends Component {
     fetch('/notes')
     .then( res => res.json())
     .then( notes => this.setState({notes}));
+    var myComponentElement;
   }
   render() {
     return (
@@ -43,7 +44,7 @@ class App extends Component {
 
             <div class="modal-content">
               <span class="close">&times;</span>
-              <MyPDFViewer />
+             <MyPDFViewer />
             </div>
 
           </div>  

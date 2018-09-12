@@ -32,7 +32,7 @@
     /* let it scroll */
     overflow: auto;
 
-  bottom: 15%;
+    bottom: 15%;
     max-height: 70%;
     max-width: 70%;
 }
@@ -40,14 +40,8 @@
 .modal {
     display: none; /* Hidden by default */
     z-index: 1; /* Sit on top */
-
-  
    
-    
     position: fixed;
-
-
-
     /*overflow: true;  Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
