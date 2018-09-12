@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Table } from 'reactstrap';
-
+import { Button } from 'reactstrap';
+import MyPDFViewer from './MyPDFViewer';
 
 class App extends Component {
   state = { notes: [] }
@@ -33,8 +34,21 @@ class App extends Component {
             // </div>
           )}
           </tbody></Table>
+
+          </div>
+        
+          <button id="myBtn">Open Sample.pdf</button>
+
+          <div id="myModal" class="modal">
+
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <MyPDFViewer />
+            </div>
+
+          </div>  
+         
         </div>
-      </div>
     );
   }
 }

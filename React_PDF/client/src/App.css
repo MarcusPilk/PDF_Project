@@ -22,6 +22,56 @@
   font-size: large;
 }
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+
+    box-shadow: 20px 20px DinGrey;
+    /* let it scroll */
+    overflow: auto;
+
+  bottom: 15%;
+    max-height: 70%;
+    max-width: 70%;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    z-index: 1; /* Sit on top */
+
+  
+   
+    
+    position: fixed;
+
+
+
+    /*overflow: true;  Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    box-shadow: 50px 50px DinGrey;
+}
+
+.modal-overlay {
+
+  /* recommendation:
+     don't focus on the number "1000" here, but rather,
+     you should have a documented system for z-index and 
+     follow that system. This number should be pretty
+     high on the scale in that system.
+  */
+  z-index: 1000;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+  
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

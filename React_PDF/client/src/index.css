@@ -1,5 +1,27 @@
+
+.previous, .next, a, span {
+  color:Black !important;
+  background-color:Gainsboro;
+  border-radius: 8px;
+  margin: 10px; 
+  font-weight: 500;
+}
+
+li {
+  color:Black !important;
+  display: block;
+  list-style-type: none;
+  margin: 5px;
+  padding-left: 10px;
+}
+
+canvas {
+  border: 2px solid DinGrey !important;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
