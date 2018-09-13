@@ -1,13 +1,13 @@
 import React from 'react';
+import { Button } from 'reactstrap';
+
 import PDF from 'react-pdf-js';
 
 class MyPDFViewer extends React.Component {
   state = {};
 
   fileName = "./sample.pdf";
-
- 
-
+  
   onDocumentComplete = (pages) => {
     this.setState({ page: 1, pages });
   }

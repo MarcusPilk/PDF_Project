@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Table } from 'reactstrap';
+import { Button } from 'reactstrap';
 import MyPDFViewer from './MyPDFViewer';
 
 class App extends Component {
@@ -37,7 +38,7 @@ class App extends Component {
 
           </div>
         
-          <button id="myBtn">Sample.pdf</button>
+          <button id="myBtn">Open Sample.pdf</button>
 
           <div id="myModal" class="modal">
 
