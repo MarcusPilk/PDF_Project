@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
@@ -21,18 +23,30 @@ mongoose.connect(dbConfig.url, {
 const app = express();
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-// define a simple route
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
-});
+app.use(cors());
+// Set up a whitelist and check against it:
+var whitelist = ['http://localhost:3000'];
+var corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+
+// Then pass them to cors:
+app.use(cors(corsOptions));
+
 
 // Require Notes routes
-require('./app/routes/note.routes.js')(app);
+require('./app/routes/pdf.routes.js')(app);
 
 // listen for requests
 app.listen(8000, () => {

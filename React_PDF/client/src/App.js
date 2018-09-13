@@ -5,11 +5,11 @@ import { Table } from 'reactstrap';
 
 
 class App extends Component {
-  state = { notes: [] }
+  state = { files: [] }
   componentDidMount(){
-    fetch('/notes')
+    fetch('http://localhost:8000/')
     .then( res => res.json())
-    .then( notes => this.setState({notes}));
+    .then( files => this.setState({files}));
   }
   render() {
     return (
@@ -21,16 +21,10 @@ class App extends Component {
         <div className="App-intro">
         <Table><thead><tr><th></th><th>Title</th><th>Contents</th></tr></thead>
         <tbody>
-          {this.state.notes.map(note =>
-            <tr key={note._id}><th scope="row"></th>
-            <td>{note.title}</td>
-            <td>{note.content}</td></tr>
-
-            // <div>
-            // <h4>{note.title}</h4>
-            // {note.content}
-            // <hr></hr>
-            // </div>
+          {this.state.files.map(file =>
+            <tr key={file._id}><th scope="row"></th>
+            <td>{file.filename}</td>
+            <td>{file.uploadDate}</td></tr>
           )}
           </tbody></Table>
         </div>
