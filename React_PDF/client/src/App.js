@@ -5,7 +5,7 @@ import { Table } from 'reactstrap';
 
 
 class App extends Component {
-    state = { files: [] }
+    state = { files: [] };
     componentDidMount(){
         fetch('http://localhost:8000/')
             .then( res => res.json())
@@ -23,7 +23,7 @@ class App extends Component {
                         <tbody>
                         {this.state.files.map(file =>
                             <tr key={file._id}><th scope="row"></th>
-                                <td>{file.filename}</td>
+                                <td><a href={'http://localhost:8000/file/' + file._id} target='_blank'>{file.filename}</a></td>
                                 <td>{file.uploadDate}</td></tr>
                         )}
                         </tbody></Table>

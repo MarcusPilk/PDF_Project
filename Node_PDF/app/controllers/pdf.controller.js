@@ -47,4 +47,21 @@ exports.files = (req,res) => {
         // Files exist
         return res.json(files);
     });
-}
+};
+
+exports.getSingleFile = (req, res) => {
+    let fileId = req.params.fileid;
+    gfs.files.findOne({_id : mongoose.Types.ObjectId(fileId)}, (err, file)=>{
+        if (!file || file.length === 0){
+            return res.status(404).json({
+                err : 'File not found'
+            });
+        }
+        let readstream = gfs.createReadStream({
+            _id : file._id
+        });
+        res.set('Content-Type', file.contentType);
+        return readstream.pipe(res);
+    });
+
+};

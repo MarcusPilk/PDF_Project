@@ -1,6 +1,5 @@
 module.exports = (app) => {
     const pdf = require('../controllers/pdf.controller.js');
-    const path = require('path');
     const crypto = require('crypto');
     const multer = require('multer');
     const GridFsStorage = require('multer-gridfs-storage');
@@ -34,6 +33,8 @@ module.exports = (app) => {
     // Retrieve all Notes
     app.get('/',pdf.findAll);
 
-    app.get('/files', pdf.files)
+    app.get('/files', pdf.files);
 
-}
+    app.get('/file/:fileid', pdf.getSingleFile);
+
+};
