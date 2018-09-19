@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
+import preview from './eye.png';
+import edit from './edit.png';
+import deleteLogo from './delete.png';
 import './App.css';
 import { Table } from 'reactstrap';
 
@@ -16,15 +19,28 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Notes</h1>
+                    <h1 className="App-title">PDF Viewer</h1>
                 </header>
                 <div className="App-intro">
-                    <Table><thead><tr><th></th><th>Title</th><th>Contents</th></tr></thead>
+                    <Table><thead><tr>
+                        <th></th>
+                        <th>PDF Name</th>
+                        <th>Upload Date</th>
+                        <th>Actions</th>
+                    </tr></thead>
                         <tbody>
                         {this.state.files.map(file =>
-                            <tr key={file._id}><th scope="row"></th>
+                            <tr key={file._id}>
+                                <th scope="row"></th>
                                 <td><a href={'http://localhost:8000/file/' + file._id} target='_blank'>{file.filename}</a></td>
-                                <td>{file.uploadDate}</td></tr>
+                                <td>{file.uploadDate}</td>
+                                <td>
+                                    <a href={'http://localhost:8000/file/' + file._id} target='_blank'><img src={preview} className="preview" alt="preview" /></a>
+                                    <img src={edit} className="editButton" alt="edit"/>
+                                    <img src={deleteLogo} className="deleteButton" alt="delete"/>
+
+                                </td>
+                            </tr>
                         )}
                         </tbody></Table>
                 </div>

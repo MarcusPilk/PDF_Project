@@ -8,11 +8,63 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #bab2b5;
   height: 150px;
   padding: 20px;
   color: white;
+  border-bottom-color: red;
+  border-bottom-width: 2px;
 }
+
+.tableFile {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+
+.add {
+  background-color: #EDC7B7;
+  color: #3f3b3d;
+  font-weight: bold;
+  height: 52px;
+  width: 15%;
+  border-radius: 12px;
+  margin-top: 12px;
+  text-align: center;
+  float: right;
+  margin-right: 30px;
+
+}
+.preview, .edit, .delete {
+  background-color: #ffffff;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+
+
+}
+
+.editButton, .deleteButton{
+  height: 30px;
+  width: 30px;
+}
+
+.App-nav {
+  margin-top: 0.5em;
+  background-color: #ffffff;
+  height: 75px;
+}
+
+/*
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-top: 10px solid #dc3545;
+}*/
 
 .App-title {
   font-size: 1.5em;
@@ -23,6 +75,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

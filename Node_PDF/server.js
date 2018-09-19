@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Require PDF routes
-require('./app/routes/pdf.routes.js')(app);
+app.use(require('./app/routes/pdf.routes.js'));
 
 // listen for requests
 app.listen(8000, () => {
