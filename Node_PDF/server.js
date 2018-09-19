@@ -29,13 +29,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
-// Set up a whitelist and check against it:
 
-
-// Then pass them to cors:
-
-
-// Require Notes routes
+// Require PDF routes
 require('./app/routes/pdf.routes.js')(app);
 
 // listen for requests
